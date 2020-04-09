@@ -78,7 +78,7 @@ const webpackConfig: Configuration = {
     new htmlWebpackPlugin({
       template: join(__dirname, "public/index.html"),
     }),
-    new CopyPlugin([{ from: "public/*.jpg", to: "docs" }]),
+    new CopyPlugin([{ from: "**/*.jpg", to: join(__dirname, "docs"), context: "public" }]),
   ],
   devServer: {
     historyApiFallback: true,
