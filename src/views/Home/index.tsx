@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "components/Icon";
-import icon from "assets/napo-spring-2020.png";
+import icon from "assets/napo-spring-2020.jpg";
 import { Center, Background } from "./styles";
 import { useEnhance } from "./enhance";
 

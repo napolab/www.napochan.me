@@ -59,7 +59,7 @@ object-assign
   height: ${t=>t.size}rem;
   max-width: 90vw;
   max-height: 90vw;
-`;function yt(t){return i.a.createElement(mt,{src:t.src,size:t.size})}var gt=r.p+"5771ce48edf77429e0ff63e02d05c413.png";const vt=dt.a.div`
+`;function yt(t){return i.a.createElement(mt,{src:t.src,size:t.size})}var gt=r.p+"d3fa4129bc0181d2355a2aba5b1e8cec.jpg";const vt=dt.a.div`
   display: flex;
   place-items: center;
   justify-content: center;
