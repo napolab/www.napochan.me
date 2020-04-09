@@ -57,6 +57,8 @@ object-assign
   box-shadow: 0px 12px 15px #00000029;
   width: ${t=>t.size}rem;
   height: ${t=>t.size}rem;
+  max-width: 90vw;
+  max-height: 90vw;
 `;function yt(t){return i.a.createElement(mt,{src:t.src,size:t.size})}var gt=r.p+"0c17d72b11ca0b6796cc143470cd1078.png";const vt=dt.a.div`
   display: flex;
   place-items: center;
@@ -72,7 +74,7 @@ object-assign
   position: absolute;
   object-fit: cover;
   left: 20%;
-`;function xt(){return Object(n.useEffect)(()=>{const t=document.body,e=t=>t.preventDefault();return t.addEventListener("scroll",e,{passive:!1}),t.addEventListener("touchmove",e,{passive:!1}),t.style.overflowX="none",t.style.overflowY="none",()=>{t.removeEventListener("scroll",e),t.removeEventListener("touchmove",e)}}),i.a.createElement(i.a.Fragment,null,i.a.createElement(vt,null,i.a.createElement("a",{href:"https://twitter.com/naporin24690",target:"_blank",rel:"noopener noreferrer",style:{zIndex:3}},i.a.createElement(yt,{src:gt,size:18})),i.a.createElement(bt,{src:gt})))}const kt=dt.a.div`
+`;function xt(){return Object(n.useEffect)(()=>{const t=document.body,e=t=>t.preventDefault();return t.addEventListener("scroll",e,{passive:!1}),t.addEventListener("touchmove",e,{passive:!1}),t.style.overflowX="none",t.style.overflowY="none",()=>{t.removeEventListener("scroll",e),t.removeEventListener("touchmove",e)}}),i.a.createElement(i.a.Fragment,null,i.a.createElement(vt,null,i.a.createElement("a",{href:"https://twitter.com/naporin24690",target:"_blank",rel:"noopener noreferrer",style:{zIndex:3}},i.a.createElement(yt,{src:gt,size:30})),i.a.createElement(bt,{src:gt})))}const kt=dt.a.div`
   position: relative;
   width: 100vw;
   height: 100vh;

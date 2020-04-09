@@ -6,4 +6,6 @@ export const Container = styled.img<{ size: number }>`
   box-shadow: 0px 12px 15px #00000029;
   width: ${props => props.size}rem;
   height: ${props => props.size}rem;
+  max-width: 90vw;
+  max-height: 90vw;
 `;
