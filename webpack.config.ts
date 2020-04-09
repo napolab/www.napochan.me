@@ -71,7 +71,7 @@ const webpackConfig: Configuration = {
   output: {
     filename: "js/[name]-[hash].js",
     path: join(__dirname, "docs"),
-    publicPath: "/",
+    publicPath: "",
   },
   plugins: [
     new htmlWebpackPlugin({
