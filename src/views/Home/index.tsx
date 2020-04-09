@@ -8,12 +8,12 @@ export function Home() {
   useEnhance();
   return (
     <React.Fragment>
-      <a href="https://twitter.com/naporin24690" target="_blank" rel="noopener noreferrer">
-        <Center>
+      <Center>
+        <a href="https://twitter.com/naporin24690" target="_blank" rel="noopener noreferrer">
           <Icon src={icon} size={18} />
-          <Background src={icon} />
-        </Center>
-      </a>
+        </a>
+        <Background src={icon} />
+      </Center>
     </React.Fragment>
   );
 }
