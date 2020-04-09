@@ -2,6 +2,7 @@ import { join } from "path";
 import htmlWebpackPlugin from "html-webpack-plugin";
 import { Configuration as BaseConfiguration } from "webpack";
 import WebpackDevServer from "webpack-dev-server";
+import CopyPlugin from "copy-webpack-plugin";
 
 type Configuration = BaseConfiguration & {
   devServer: WebpackDevServer.Configuration;
@@ -77,6 +78,7 @@ const webpackConfig: Configuration = {
     new htmlWebpackPlugin({
       template: join(__dirname, "public/index.html"),
     }),
+    new CopyPlugin([{ from: "public/*.jpg", to: "docs" }]),
   ],
   devServer: {
     historyApiFallback: true,
