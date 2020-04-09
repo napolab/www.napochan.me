@@ -9,7 +9,7 @@ export function Home() {
   return (
     <React.Fragment>
       <Center>
-        <a href="https://twitter.com/naporin24690" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com/naporin24690" target="_blank" rel="noopener noreferrer" style={{ zIndex: 3 }}>
           <Icon src={icon} size={18} />
         </a>
         <Background src={icon} />
