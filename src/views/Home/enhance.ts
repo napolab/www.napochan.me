@@ -3,9 +3,10 @@ import { drawCherryBlossoms } from "components/DarwCherryBlossoms";
 
 export function useEnhance() {
   const [image, setImage] = useState<string | null>(null);
-  import("assets/napo-spring-2020.jpg")
-    .then(res => res.default as string)
-    .then(res => setImage(res));
+  Promise.all<string, never>([
+    import("assets/napo-spring-2020.jpg").then(res => res.default as string),
+    new Promise(resolve => setTimeout(resolve, 1000)),
+  ]).then(res => setImage(res[0]));
 
   const requesting = useMemo(() => image === null, [image]);
   useEffect(() => {
@@ -26,7 +27,7 @@ export function useEnhance() {
   }, []);
 
   useEffect(() => {
-    !requesting && drawCherryBlossoms();
+    // !requesting && drawCherryBlossoms();
   }, [requesting]);
 
   return { image, requesting };
