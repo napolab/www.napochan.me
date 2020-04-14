@@ -27,7 +27,7 @@ export function useEnhance() {
   }, []);
 
   useEffect(() => {
-    // !requesting && drawCherryBlossoms();
+    !requesting && drawCherryBlossoms();
   }, [requesting]);
 
   return { image, requesting };
