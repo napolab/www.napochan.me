@@ -8,11 +8,11 @@ export function Home() {
   return (
     <Container requesting={requesting}>
       <Background src={image || ""} />
-      <Center show={requesting}>
-        <a href="https://twitter.com/naporin24690" target="_blank" rel="noopener noreferrer" style={{ zIndex: 3 }}>
+      <a href="https://twitter.com/naporin24690" target="_blank" rel="noopener noreferrer" style={{ zIndex: 3 }}>
+        <Center show={requesting}>
           <Icon src={image || ""} />
-        </a>
-      </Center>
+        </Center>
+      </a>
     </Container>
   );
 }
