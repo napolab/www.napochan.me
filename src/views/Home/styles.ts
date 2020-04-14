@@ -1,22 +1,33 @@
 import styled from "styled-components";
 
-export const Center = styled.div`
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  align-items: center;
+export const Container = styled.div`
+  position: relative;
+  overflow: hidden;
   height: 100vh;
   width: 100vw;
+  z-index: 1;
+`;
+
+export const Center = styled.div`
   z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const Background = styled.img`
+  z-index: 2;
   opacity: 0.1;
-  width: 100%;
   height: 100%;
   position: absolute;
   object-fit: cover;
-  left: 20%;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  @media screen and (max-width: 480px) {
+    left: 60%;
+  }
 `;
 
 export const BlurScreen = styled.div<{ requesting: boolean }>`

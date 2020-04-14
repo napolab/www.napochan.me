@@ -10,7 +10,10 @@ export function useEnhance() {
   const requesting = useMemo(() => image === null, [image]);
   useEffect(() => {
     const el = document.body;
-    const handler = (e: Event) => e.preventDefault();
+    const handler = (e: Event) => {
+      console.log(e);
+      e.preventDefault();
+    };
 
     el.addEventListener("scroll", handler, { passive: false });
     el.addEventListener("touchmove", handler, { passive: false });
@@ -20,7 +23,7 @@ export function useEnhance() {
       el.removeEventListener("scroll", handler);
       el.removeEventListener("touchmove", handler);
     };
-  });
+  }, []);
 
   useEffect(() => {
     !requesting && drawCherryBlossoms();
