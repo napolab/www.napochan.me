@@ -60,7 +60,6 @@
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
-    "prebuild": "rimraf docs",
     "build": "NODE_ENV=production webpack --config webpack.config.ts",
     "postbuild": "git add . && git commit -m \":wrench: build\" && git push",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx src",
