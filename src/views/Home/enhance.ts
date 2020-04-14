@@ -5,7 +5,7 @@ export function useEnhance() {
   const [image, setImage] = useState<string | null>(null);
   Promise.all<string, never>([
     import("assets/napo-spring-2020.jpg").then(res => res.default as string),
-    new Promise(resolve => setTimeout(resolve, 1000)),
+    new Promise(resolve => setTimeout(resolve, 0)),
   ]).then(res => setImage(res[0]));
 
   const requesting = useMemo(() => image === null, [image]);
