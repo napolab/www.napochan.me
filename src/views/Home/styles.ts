@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Center = styled.div`
   display: flex;
@@ -17,18 +17,6 @@ export const Background = styled.img`
   position: absolute;
   object-fit: cover;
   left: 20%;
-`;
-
-const Animation = keyframes`
-  0% {
-    filter: blur(6px);
-  }
-  70% {
-    filter: blur(6px);
-  }
-  100% {
-    filter: none;
-  }
 `;
 
 export const BlurScreen = styled.div<{ requesting: boolean }>`

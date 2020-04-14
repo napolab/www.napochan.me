@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Icon } from "components/Icon";
 import { Center, Background, BlurScreen } from "./styles";
 import { useEnhance } from "./enhance";

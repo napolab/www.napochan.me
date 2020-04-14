@@ -1,16 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-const Animation = keyframes`
-  0% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 0;
-  }
-  100%: {
-    opacity: 1;
-  }
-`;
+import styled from "styled-components";
 
 export const Container = styled.img<{ size: number }>`
   object-fit: cover;
