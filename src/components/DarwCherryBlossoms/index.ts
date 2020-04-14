@@ -1,4 +1,8 @@
-(function(d, b, w) {
+export function drawCherryBlossoms() {
+  const w = window;
+  const d = document;
+  const b = document.body;
+
   const q = d.createElement("div");
   q.id = "sakura";
   q.innerHTML =
@@ -130,7 +134,7 @@
     g[i] = d.getElementById("hanabira" + i);
     c[i] = 0;
   }
-  setInterval(function() {
+  function animation() {
     for (let i = 0; i < 50; i++) {
       if (t[i] < u + h - 40) {
         if (y[i] >= c[i]) {
@@ -202,5 +206,7 @@
       c[i]++;
     }
     k++;
-  }, 45);
-})(window.document, window.document.body, window);
+    setTimeout(() => window.requestAnimationFrame(animation), 35);
+  }
+  window.requestAnimationFrame(animation);
+}

@@ -1,19 +1,18 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Icon } from "components/Icon";
-import icon from "assets/napo-spring-2020.jpg";
-import { Center, Background } from "./styles";
+import { Center, Background, BlurScreen } from "./styles";
 import { useEnhance } from "./enhance";
 
 export function Home() {
-  useEnhance();
+  const { image, requesting } = useEnhance();
   return (
-    <React.Fragment>
+    <BlurScreen requesting={requesting}>
       <Center>
         <a href="https://twitter.com/naporin24690" target="_blank" rel="noopener noreferrer" style={{ zIndex: 3 }}>
-          <Icon src={icon} size={30} />
+          <Icon src={image || ""} size={30} />
         </a>
-        <Background src={icon} />
+        <Background src={image || ""} />
       </Center>
-    </React.Fragment>
+    </BlurScreen>
   );
 }
