@@ -4,3 +4,4 @@ dist
 *.log
 .python-version
 node_modules
+.next
