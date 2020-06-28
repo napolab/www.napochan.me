@@ -1,3 +1,3 @@
 module.exports = {
-  outdir: "docs",
+  assetPrefix: "/home-page",
 };
