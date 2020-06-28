@@ -30,7 +30,7 @@
   "scripts": {
     "start": "next",
     "build": "next build",
-    "export": "next export -o docs",
+    "export": "next export",
     "prebuild": "rm -rf .next",
     "generate": "npm-run-all -s build export",
     "lint": "eslint src --ext .ts,.tsx"
