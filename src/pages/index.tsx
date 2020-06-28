@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import Card from "../common/components/Card";
 import { snsAccounts } from "../common/utils/constants";
 import Slick from "../common/components/Slick";
@@ -27,6 +27,9 @@ const Home: React.FC<Props> = ({ accounts }) => {
           </MainVisualContainer>
           <CardContainer>
             <ContentCard title={"Introduction"} delay={0.5}>
+              <p>
+                ぼくは<Bold>Naporitan</Bold>！
+              </p>
               <p>
                 <Bold>「インターネットで生きていきたい」</Bold>ただそれだけが僕の持つ思い
               </p>
