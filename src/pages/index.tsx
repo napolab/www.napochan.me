@@ -191,7 +191,6 @@ const AccountContainer = styled.div`
     max-width: 600px;
 
     @media screen and (max-width: 480px) {
-      margin-top: 24px;
       max-height: 100px;
     }
     img {

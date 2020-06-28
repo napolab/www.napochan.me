@@ -1,36 +1,32 @@
 {
-  "devFiles": [],
+  "devFiles": [
+    "static/runtime/react-refresh.js",
+    "static/development/dll/dll_f9de5cbc314a1e41f91e.js",
+    "static/development/dll/dll_f9de5cbc314a1e41f91e.js.map"
+  ],
   "lowPriorityFiles": [
-    "static/xJsGDtcykMxDRcYYyUWwS/_buildManifest.js",
-    "static/xJsGDtcykMxDRcYYyUWwS/_ssgManifest.js"
+    "static/development/_buildManifest.js",
+    "static/development/_ssgManifest.js"
   ],
   "pages": {
     "/": [
-      "static/runtime/webpack-c212667a5f965e81e004.js",
-      "static/chunks/framework.c6faae2799416a6da8e8.js",
-      "static/chunks/816f2165155f36eb0d44c5d565e11b1c33c48ba8.80f704bc1a326af3a2e1.js",
-      "static/runtime/main-405bd3c55f9ab8ed35cf.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_app": [
-      "static/runtime/webpack-c212667a5f965e81e004.js",
-      "static/chunks/framework.c6faae2799416a6da8e8.js",
-      "static/chunks/816f2165155f36eb0d44c5d565e11b1c33c48ba8.80f704bc1a326af3a2e1.js",
-      "static/chunks/181d9a86b5d1f6320cca2f8cdbf25f304f98b90e.90e7c089fc47e30f0408.js",
-      "static/runtime/main-405bd3c55f9ab8ed35cf.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_error": [
-      "static/runtime/webpack-c212667a5f965e81e004.js",
-      "static/chunks/framework.c6faae2799416a6da8e8.js",
-      "static/runtime/main-405bd3c55f9ab8ed35cf.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_polyfills": [
-      "static/runtime/polyfills-2f74f7d9820760171318.js"
+      "static/runtime/polyfills.js"
     ],
     "/index": [
-      "static/runtime/webpack-c212667a5f965e81e004.js",
-      "static/chunks/framework.c6faae2799416a6da8e8.js",
-      "static/chunks/816f2165155f36eb0d44c5d565e11b1c33c48ba8.80f704bc1a326af3a2e1.js",
-      "static/runtime/main-405bd3c55f9ab8ed35cf.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }
