@@ -185,8 +185,15 @@ const AccountContainer = styled.div`
     }
   }
   & > div {
-    max-width: 500px;
+    max-width: 600px;
+
+    @media screen and (max-width: 480px) {
+      margin-top: 24px;
+      max-height: 100px;
+    }
     img {
+      object-fit: contain;
+      object-position: top;
       width: 100%;
     }
   }

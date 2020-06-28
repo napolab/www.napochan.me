@@ -48,16 +48,10 @@ const Slick: React.FC<Props> = ({ images, duration, delay, onChange }) => {
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
   overflow: hidden;
 
   & > div {
     display: flex;
-
-    img {
-      object-position: left top;
-      object-fit: cover;
-    }
   }
 `;
 
