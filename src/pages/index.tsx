@@ -37,13 +37,13 @@ const Home: React.FC<Props> = ({ accounts }) => {
             </Card>
             <Card title={"SNSAccounts"} delayInitialMount={1000}>
               <AccountContainer>
-                <div>
+                <Columns>
                   {accounts.map(({ type, url }) => (
-                    <AnchorLink href={url} target="_blank" rel="noreferrer" key={`${type}-${url}`}>
+                    <AnchorLink href={url} target="_blank" rel="noreferrer" key={`${type}-${url}`} className={"active"}>
                       {type}
                     </AnchorLink>
                   ))}
-                </div>
+                </Columns>
               </AccountContainer>
             </Card>
             <Card title={"Like"} delayInitialMount={1500}>
@@ -53,8 +53,10 @@ const Home: React.FC<Props> = ({ accounts }) => {
             </Card>
             <Card title={"Programing"} delayInitialMount={2000}>
               <p>Typescriptが好きです。Python・Ruby on Railsはほんとに少しだけかけますが、得意じゃないよ！</p>
-              <p>フロントエンドフレームワークではReact/Next.jsをバックエンドフレームワークではNestJSを好んで使うよ！</p>
-              <p>Reduxはnormalizrを使うやり方が好き！</p>
+              <p>
+                フロントエンドフレームワークでは React / Next.js をバックエンドフレームワークでは NestJSを好んで使うよ！
+              </p>
+              <p>Redux + Redux Toolkit + normalizrを使うやり方が好き！</p>
               <p>
                 インフラまわりはfirebase・vercel・herokuが調べつつやりたいことができる程度。
                 コンテナ技術・GCP・AWSはほとんどわからないので勉強中・・・。
@@ -147,4 +149,9 @@ const AccountContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+`;
+
+const Columns = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
