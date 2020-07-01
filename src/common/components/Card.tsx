@@ -90,9 +90,11 @@ const Header = styled.h3`
   @media screen and (max-width: 480px) {
     font-size: 32px;
   }
+  z-index: 1;
 `;
 
 const Dummy = styled.div`
+  z-index: 1;
   opacity: 0;
   margin: 0;
   padding: 0;
@@ -109,4 +111,5 @@ const Dummy = styled.div`
 const Body = styled.div`
   font-size: 16px;
   color: ${(props) => props.theme.secondary};
+  z-index: 10;
 `;
