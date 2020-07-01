@@ -26,19 +26,16 @@ const Home: React.FC<Props> = ({ accounts }) => {
             <img src="/static/main.png" />
           </MainVisualContainer>
           <CardContainer>
-            <ContentCard title={"Introduction"} delay={0.5}>
+            <Card title={"Introduction"} delayInitialMount={500}>
               <p>
-                ぼくは<Bold>Naporitan</Bold>！
-              </p>
-              <p>
-                <Bold>「インターネットで生きていきたい」</Bold>ただそれだけが僕の持つ思い
+                <Bold>Naporitan</Bold>っていいます！
               </p>
               <p>
                 趣味は<Bold>プログラミング</Bold>と<Bold>Vtuber</Bold>と<Bold>百合漫画</Bold>を読むこと
               </p>
               <p>かわいいものと音楽が好き！みんな仲良くしてね</p>
-            </ContentCard>
-            <ContentCard title={"SNSAccounts"} delay={1}>
+            </Card>
+            <Card title={"SNSAccounts"} delayInitialMount={1000}>
               <AccountContainer>
                 <div>
                   {accounts.map(({ type, url, image }) => (
@@ -53,17 +50,19 @@ const Home: React.FC<Props> = ({ accounts }) => {
                     </a>
                   ))}
                 </div>
-                <div>
-                  <Slick images={accounts.map(({ image }) => image)} onChange={setNowImage} />
-                </div>
+                {false && (
+                  <div>
+                    <Slick images={accounts.map(({ image }) => image)} onChange={setNowImage} />
+                  </div>
+                )}
               </AccountContainer>
-            </ContentCard>
-            <ContentCard title={"Like"} delay={1.5}>
+            </Card>
+            <Card title={"Like"} delayInitialMount={1500}>
               <p>
                 好きな<Bold>漫画</Bold>・<Bold>Vtuber</Bold>・<Bold>音楽</Bold>について書きます
               </p>
-            </ContentCard>
-            <ContentCard title={"Programing"} delay={2}>
+            </Card>
+            <Card title={"Programing"} delayInitialMount={2000}>
               <p>Typescriptが好きです。Python・Ruby on Railsはほんとに少しだけかけますが、得意じゃないよ！</p>
               <p>フロントエンドフレームワークではReact/Next.jsをバックエンドフレームワークではNestJSを好んで使うよ！</p>
               <p>Reduxはnormalizrを使うやり方が好き！</p>
@@ -74,7 +73,7 @@ const Home: React.FC<Props> = ({ accounts }) => {
               <p>
                 CI/CDまわりはGithubActionsはではじめに少し使っていた程度、CircleCIもすでに動いているymlに付け足すことはできます。
               </p>
-            </ContentCard>
+            </Card>
           </CardContainer>
         </div>
       </FirstView>
@@ -110,7 +109,6 @@ const FirstView = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
   }
 
   @media screen and (max-width: 480px) {
@@ -121,7 +119,7 @@ const FirstView = styled.section`
   }
 `;
 
-const MainVisualAnimation = keyframes`
+const HoverAnim = keyframes`
   0% {
     opacity: 0;
     transform: translateY(8px);
@@ -141,22 +139,17 @@ const MainVisualContainer = styled.div`
     height: 100%;
     width: 100%;
     object-fit: contain;
-    animation: ${MainVisualAnimation} 1s ease-in-out;
+    animation: ${HoverAnim} 1s ease-in-out;
   }
 `;
 
-const ContentCard = styled(Card)<{ delay?: number }>`
-  opacity: 0;
-  animation: ${MainVisualAnimation} 1s ease-in-out ${(props) => props.delay || 0}s;
-  animation-fill-mode: forwards;
-`;
-
 const CardContainer = styled.div`
+  height: 100%;
   margin: 32px;
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   & > div {
     margin-bottom: 16px;
@@ -182,6 +175,11 @@ const AccountContainer = styled.div`
   a {
     display: block;
     color: ${(props) => props.theme.secondary};
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     &.active {
       font-weight: 600;
       color: ${(props) => props.theme.primary};
@@ -189,10 +187,6 @@ const AccountContainer = styled.div`
   }
   & > div {
     max-width: 600px;
-
-    @media screen and (max-width: 480px) {
-      max-height: 100px;
-    }
     img {
       object-fit: contain;
       object-position: top;
