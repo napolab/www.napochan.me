@@ -154,7 +154,7 @@ const CardContainer = styled.div`
     }
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     height: 100%;
     overflow-y: visible;
   }
@@ -168,6 +168,8 @@ const CardContainer = styled.div`
 const AccountContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
   & > a {
     margin: 0 16px;
   }
