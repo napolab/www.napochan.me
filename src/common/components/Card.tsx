@@ -40,9 +40,9 @@ const Card: React.FC<Props> = ({ title, children, className, delayInitialMount }
 
   return (
     <Container className={className} ref={ref} visible={visible}>
+      <Dummy>{title}</Dummy>
       <Header>{title}</Header>
       <Body>{children}</Body>
-      <Dummy>{title}</Dummy>
     </Container>
   );
 };
@@ -77,6 +77,7 @@ const Container = styled.div<{ visible: boolean }>`
 
 const Header = styled.h3`
   position: absolute;
+  z-index: 1;
   bottom: 8px;
   right: 16px;
   opacity: 0.2;
@@ -90,7 +91,6 @@ const Header = styled.h3`
   @media screen and (max-width: 480px) {
     font-size: 32px;
   }
-  z-index: 1;
 `;
 
 const Dummy = styled.div`
@@ -109,6 +109,7 @@ const Dummy = styled.div`
 `;
 
 const Body = styled.div`
+  position: relative;
   font-size: 16px;
   color: ${(props) => props.theme.secondary};
   z-index: 10;
