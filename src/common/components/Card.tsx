@@ -51,9 +51,9 @@ export default Card;
 
 const Container = styled.div<{ visible: boolean }>`
   position: relative;
-  width: 100%;
+  width: auto;
+  height: auto;
   min-height: 96px;
-  height: 100%;
   box-sizing: border-box;
   border-radius: 8px;
   background: ${(props) => props.theme.base};

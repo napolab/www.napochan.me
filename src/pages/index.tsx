@@ -6,6 +6,8 @@ import { snsAccounts } from "~/common/utils/constants";
 import { AnchorLink } from "~/common/components/Link";
 import { Bold } from "~/common/components/Bold";
 import { HoverAnim } from "~/common/Animations/hover";
+import { Title } from "~/common/components/Title";
+import { FaTwitter, FaBlog, FaGithub } from "react-icons/fa";
 
 type Account = {
   type: string;
@@ -28,42 +30,50 @@ const Home: React.FC<Props> = ({ accounts }) => {
           <CardContainer>
             <Card title={"Introduction"} delayInitialMount={500}>
               <p>
-                <Bold>Naporitan</Bold>っていいます！
+                <Bold>Naporitan</Bold>っていいます！主な活動場所はTwitterでWebフロントエンドをやってるよ！
               </p>
               <p>
-                趣味は<Bold>プログラミング</Bold>と<Bold>Vtuber</Bold>と<Bold>百合漫画</Bold>を読むこと
+                趣味は<Bold>プログラミング</Bold>と<Bold>Vtuber</Bold>と<Bold>漫画</Bold>を読むこと
               </p>
               <p>かわいいものと音楽が好き！みんな仲良くしてね</p>
             </Card>
-            <Card title={"SNSAccounts"} delayInitialMount={1000}>
-              <AccountContainer>
-                <Columns>
-                  {accounts.map(({ type, url }) => (
-                    <AnchorLink href={url} target="_blank" rel="noreferrer" key={`${type}-${url}`} className={"active"}>
-                      {type}
-                    </AnchorLink>
-                  ))}
-                </Columns>
-              </AccountContainer>
-            </Card>
             <Card title={"Like"} delayInitialMount={1500}>
+              <Title level={4}>Vtuber</Title>
+              <p>名取さなさんが好きです</p>
+              <Title level={4}>音楽</Title>
+              <p>カンザキイオリさん・花譜ちゃん・DUSTCELLよく聴いてます</p>
+              <p>最近はMU2020とかAOFとかで影響されてDJイベント参加にも興味が湧いています</p>
+              <Title level={4}>東方</Title>
+              <p>封獣ぬえちゃんが好きです</p>
+              <p>例大祭とか行くので誘ってください</p>
+              <Title level={4}>漫画</Title>
+              <p>百合漫画が好きですが何でも読みます</p>
               <p>
-                好きな<Bold>漫画</Bold>・<Bold>Vtuber</Bold>・<Bold>音楽</Bold>について書きます
+                最近読んだものだと「きたない君が一番かわいい」・「アクタージュ」・「たとえ届かぬ糸だとしても」が好きです
               </p>
             </Card>
             <Card title={"Programing"} delayInitialMount={2000}>
-              <p>Typescriptが好きです。Python・Ruby on Railsはほんとに少しだけかけますが、得意じゃないよ！</p>
-              <p>
-                フロントエンドフレームワークでは React / Next.js をバックエンドフレームワークでは NestJSを好んで使うよ！
-              </p>
-              <p>Redux + Redux Toolkit + normalizrを使うやり方が好き！</p>
-              <p>
-                インフラまわりはfirebase・vercel・herokuが調べつつやりたいことができる程度。
-                コンテナ技術・GCP・AWSはほとんどわからないので勉強中・・・。
-              </p>
-              <p>
-                CI/CDまわりはGithubActionsはではじめに少し使っていた程度、CircleCIもすでに動いているymlに付け足すことはできます。
-              </p>
+              <Title level={4}>好きなエディタ</Title>
+              <p>VisualStudioCode</p>
+              <Title level={4}>よく書くよ！好き！</Title>
+              <p>Typescript・React・Next.js・NestJS</p>
+              <Title level={4}>たまに触る！まだよくわかってない</Title>
+              <p>docker・GCP・AWS</p>
+              <p>GithubActions</p>
+              <p>firebase・vercel・heroku</p>
+              <Title level={4}>気になってる！勉強中！</Title>
+              <p>PIXI.js・THREE.js・react-spring・react-spring/three-fiber・GLSL・ CircleCI</p>
+            </Card>
+            <Card title={"SNSAccounts"} delayInitialMount={1000}>
+              <AccountContainer>
+                {accounts.map(({ type, url }) => (
+                  <AnchorLink href={url} target="_blank" rel="noreferrer" key={`${type}-${url}`}>
+                    {type === "twitter" && <FaTwitter size={"32px"} />}
+                    {type === "github" && <FaGithub size={"32px"} />}
+                    {type === "hatenablog" && <FaBlog size={"32px"} />}
+                  </AnchorLink>
+                ))}
+              </AccountContainer>
             </Card>
           </CardContainer>
         </FirstView>
@@ -104,9 +114,10 @@ const FirstView = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     border: none;
   }
 `;
@@ -119,18 +130,21 @@ const MainVisualContainer = styled.div`
   img {
     height: 100%;
     width: 100%;
+    max-height: calc(100vh - 128px);
     object-fit: contain;
     animation: ${HoverAnim} 1s ease-in-out;
   }
 `;
 
 const CardContainer = styled.div`
-  height: 100%;
+  height: calc(100vh - 128px);
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   margin: 32px;
-  display: flex;
   flex: 1;
-  flex-direction: column;
-  justify-content: flex-start;
+  min-width: 432px;
 
   & > div {
     margin-bottom: 16px;
@@ -140,18 +154,21 @@ const CardContainer = styled.div`
     }
   }
 
+  @media screen and (max-width: 1000px) {
+    height: 100%;
+    overflow-y: visible;
+  }
+
   @media screen and (max-width: 480px) {
     margin: 16px 0 0 0;
+    min-width: 100%;
   }
 `;
 
 const AccountContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-`;
-
-const Columns = styled.div`
-  display: flex;
-  flex-direction: column;
+  & > a {
+    margin: 0 16px;
+  }
 `;
