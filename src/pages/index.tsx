@@ -28,7 +28,7 @@ const Home: React.FC<Props> = ({ accounts }) => {
             <img src="/static/main.png" />
           </MainVisualContainer>
           <CardContainer>
-            <Card title={"Introduction"} delayInitialMount={500}>
+            <Card title={"Introduction"} delayInitialMount={1000}>
               <p>
                 <Bold>Naporitan</Bold>っていいます！主な活動場所はTwitterでWebフロントエンドをやってるよ！
               </p>
