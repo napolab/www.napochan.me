@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { NextPage } from "next";
 import { AppProps } from "next/app";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { theme } from "../common/utils/constants";
+import { theme } from "~/common/utils/constants";
 import Head from "next/head";
 
 const App: NextPage<AppProps> = ({ pageProps, Component }) => (
