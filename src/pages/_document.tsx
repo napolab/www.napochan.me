@@ -1,20 +1,16 @@
 import React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-type Props = {
-  styleTags: any;
-};
-
-export default class MyDocument extends Document<Props> {
-  static getInitialProps({ renderPage }): any {
+export default class MyDocument extends Document {
+  static async getInitialProps({ renderPage }: DocumentContext): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet();
 
-    const page = renderPage((App) => (props) => sheet.collectStyles(<App {...props} />));
+    const page = await renderPage((App) => (props) => sheet.collectStyles(<App {...props} />));
 
-    const styleTags = sheet.getStyleElement();
+    const styles = sheet.getStyleElement();
 
-    return { ...page, styleTags };
+    return { ...page, styles };
   }
 
   render(): JSX.Element {
@@ -22,7 +18,7 @@ export default class MyDocument extends Document<Props> {
       <Html lang="ja">
         <Head>
           <meta charSet="utf-8" />
-          {this.props.styleTags}
+          {this.props.styles}
           <meta property="og:url" content="https://napochaan.me" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="なぽさいと" />
