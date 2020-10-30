@@ -73,6 +73,7 @@ const Home: React.FC<Props> = ({ accounts }) => {
                     {type === "twitter" && <FaTwitter size={"32px"} />}
                     {type === "github" && <FaGithub size={"32px"} />}
                     {type === "hatenablog" && <FaBlog size={"32px"} />}
+                    {type}
                   </AnchorLink>
                 ))}
               </AccountContainer>
@@ -173,6 +174,12 @@ const AccountContainer = styled.div`
   align-items: center;
   height: 100%;
   & > a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     margin: 0 16px;
+    svg {
+      margin-right: 8px;
+    }
   }
 `;
