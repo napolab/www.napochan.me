@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 import styled from "styled-components";
-import { GetServerSideProps } from "next";
 import Card from "~/common/components/Card";
 import { snsAccounts } from "~/common/utils/constants";
 import { AnchorLink } from "~/common/components/Link";
@@ -8,6 +7,8 @@ import { Bold } from "~/common/components/Bold";
 import { HoverAnim } from "~/common/Animations/hover";
 import { Title } from "~/common/components/Title";
 import { FaTwitter, FaBlog, FaGithub } from "react-icons/fa";
+
+import { GetStaticProps } from "next";
 
 type Account = {
   type: string;
@@ -82,7 +83,7 @@ const Home: React.FC<Props> = ({ accounts }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const accounts = snsAccounts.map<Account>(({ url, type, image }) => ({ url, type, image }));
 
   return { props: { accounts } };
