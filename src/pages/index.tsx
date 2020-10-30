@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import Image from "next/image";
 import styled from "styled-components";
 import Card from "~/common/components/Card";
 import { snsAccounts } from "~/common/utils/constants";
@@ -26,7 +27,7 @@ const Home: React.FC<Props> = ({ accounts }) => {
       <FirstViewWrapper>
         <FirstView>
           <MainVisualContainer>
-            <img src="/static/main.png" />
+            <Image src="/static/main.png" alt="naporitan's image character" unsized />
           </MainVisualContainer>
           <CardContainer>
             <Card title={"Introduction"} delayInitialMount={1000}>
