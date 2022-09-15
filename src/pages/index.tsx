@@ -27,7 +27,11 @@ const Home: React.FC<Props> = ({ accounts }) => {
       <FirstViewWrapper>
         <FirstView>
           <MainVisualContainer>
-            <Image src="/static/main.png" alt="naporitan's image character" unsized />
+            <img
+              src="https://imagedelivery.net/TQ7GECK3x8OMl8rY8WdOxQ/396b5eef-0551-4e5a-fe2b-0d31dee4f300/square"
+              alt="naporitan's image character"
+              loading="lazy"
+            />
           </MainVisualContainer>
           <CardContainer>
             <Card title={"Introduction"} delayInitialMount={1000}>
