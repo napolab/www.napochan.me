@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-import Image from "next/image";
 import styled from "styled-components";
 import Card from "~/common/components/Card";
 import { snsAccounts } from "~/common/utils/constants";
@@ -104,8 +103,10 @@ const Container = styled.div`
 `;
 
 const FirstViewWrapper = styled.section`
-  width: 100vw;
+  width: 100%;
+  max-width: 1800px;
   min-height: 100vh;
+  margin: 0 auto;
   padding: 32px;
   box-sizing: border-box;
 
