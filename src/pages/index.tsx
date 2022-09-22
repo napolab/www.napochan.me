@@ -28,7 +28,7 @@ const Home: React.FC<Props> = ({ accounts }) => {
         <FirstView>
           <MainVisualContainer>
             <img
-              src="https://imagedelivery.net/TQ7GECK3x8OMl8rY8WdOxQ/396b5eef-0551-4e5a-fe2b-0d31dee4f300/square"
+              src="https://imagedelivery.net/TQ7GECK3x8OMl8rY8WdOxQ/b9a12f77-45d9-4610-be1a-c72ee13cdc00/square"
               alt="naporitan's image character"
               loading="lazy"
             />

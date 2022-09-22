@@ -19,11 +19,11 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           {this.props.styles}
-          <meta property="og:url" content="https://napochaan.me" />
+          <meta property="og:url" content="https://www.napochaan.me/" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="なぽさいと" />
           <meta property="og:site_name" content="なぽさいと" />
-          <meta property="og:description" content="@naporin24690のホームページです．" />
+          <meta property="og:description" content="@naporin24690のホームページです" />
           <meta property="og:image" content="/static/main.png" />
 
           <meta name="twitter:card" content="summary" />
