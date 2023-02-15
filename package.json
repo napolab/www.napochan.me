@@ -43,5 +43,8 @@
     "generate": "npm-run-all -s build export",
     "lint": "eslint src --ext .ts,.tsx"
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.4.1",
+  "volta": {
+    "node": "18.14.0"
+  }
 }
