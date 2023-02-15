@@ -27,7 +27,7 @@ const Home: React.FC<Props> = ({ accounts }) => {
         <FirstView>
           <MainVisualContainer>
             <img
-              src="https://imagedelivery.net/TQ7GECK3x8OMl8rY8WdOxQ/b9a12f77-45d9-4610-be1a-c72ee13cdc00/square"
+              src="https://imagedelivery.net/TQ7GECK3x8OMl8rY8WdOxQ/c161150a-80cb-4783-4bda-870c85e5de00/square"
               alt="naporitan's image character"
               loading="lazy"
             />
@@ -105,7 +105,7 @@ const Container = styled.div`
 const FirstViewWrapper = styled.section`
   width: 100%;
   max-width: 1800px;
-  min-height: 100vh;
+  height: 100vh;
   margin: 0 auto;
   padding: 32px;
   box-sizing: border-box;
@@ -138,14 +138,14 @@ const MainVisualContainer = styled.div`
   img {
     height: 100%;
     width: 100%;
-    max-height: calc(100vh - 128px);
+    max-height: calc(100vh - 138px);
     object-fit: contain;
     animation: ${HoverAnim} 1s ease-in-out;
   }
 `;
 
 const CardContainer = styled.div`
-  height: calc(100vh - 128px);
+  height: calc(100vh - 138px);
   overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;

@@ -8,3 +8,4 @@ node_modules
 docs
 out
 **/.DS_Store
+.yarn/cache
