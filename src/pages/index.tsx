@@ -105,7 +105,6 @@ const Container = styled.div`
 const FirstViewWrapper = styled.section`
   width: 100%;
   max-width: 1800px;
-  height: 100vh;
   margin: 0 auto;
   padding: 32px;
   box-sizing: border-box;
